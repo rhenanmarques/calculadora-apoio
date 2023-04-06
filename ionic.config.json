@@ -1,0 +1,7 @@
+{
+  "name": "calculadora-apoio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
