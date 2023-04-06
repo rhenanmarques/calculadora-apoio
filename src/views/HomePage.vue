@@ -20,6 +20,14 @@
               <ion-input v-model="renda" type="number" required></ion-input>
             </ion-item>
 
+            <ion-card v-if="preencherTodos" class="ion-text-center" color="danger">
+              <ion-card-header>
+                <ion-card-subtitle>
+                  Por favor preencha todos os campos
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+
             <ion-button @click="calcularApoio()" expand="block">Calcular Apoio</ion-button>
 
             <ion-card v-if="mostrarResultado" class="ion-text-center">
@@ -156,35 +164,46 @@ export default defineComponent({
   },
   data() {
     return {
-      rendimento: null,
-      renda: null,
-      valorApoio: null,
+      rendimento: undefined as number | undefined,
+      renda: undefined as number | undefined,
+      valorApoio: undefined as number | undefined,
       mensagem: '',
       mostrarResultado: false,
       mostrarMensagem: false,
+      preencherTodos: false,
     };
   },
   methods: {
     calcularApoio() {
-      const rendimentoAnual = this.rendimento * 14;
-      if (rendimentoAnual > 38632) {
-        this.mensagem = 'Não é elegível porque o seu rendimento é maior que 38.632 €';
-        this.mostrarMensagem = true;
-        this.mostrarResultado = false;
-      } else {
-        const valorMaximoApoio = 200;
-        const taxaEsforco = this.rendimento * 0.35;
-        if (taxaEsforco > this.renda) {
-          this.mensagem = 'Você não tem direito ao apoio porque sua margem de esforço é menor que 35%';
+      if (!this.rendimento || !this.renda) {
+        this.preencherTodos = true;
+      } 
+      else {
+        this.preencherTodos = false;
+        const rendimentoAnual = this.rendimento * 14;
+
+        if (rendimentoAnual > 38632) {
+          this.mensagem = 'Não é elegível porque o seu rendimento é maior que 38.632 €';
           this.mostrarMensagem = true;
           this.mostrarResultado = false;
-        } else {
-          this.valorApoio = this.renda - taxaEsforco;
-          this.valorApoio = Math.min(this.valorApoio, valorMaximoApoio).toFixed(2).replace('.', ',');
-          this.mostrarResultado = true;
-          this.mostrarMensagem = false;
+        } 
+        else {
+          const valorMaximoApoio = 200;
+          const taxaEsforco = this.rendimento * 0.35;
+          if (taxaEsforco > this.renda) {
+            this.mensagem = 'Você não tem direito ao apoio porque sua margem de esforço é menor que 35%';
+            this.mostrarMensagem = true;
+            this.mostrarResultado = false;
+          } 
+          else {
+            this.valorApoio = this.renda - taxaEsforco;
+            this.valorApoio = Math.min(this.valorApoio, valorMaximoApoio);
+            this.mostrarResultado = true;
+            this.mostrarMensagem = false;
+          }
         }
       }
+
     },
   },
 });
@@ -206,4 +225,5 @@ input[type=number] {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}</style>
+}
+</style>
