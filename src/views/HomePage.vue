@@ -41,7 +41,7 @@
 
                 <div v-if="mostrarResultado" class="ion-padding">
                   <div class="ion-text-center">
-                    <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
+                    <ion-icon name="checkmark-circle-outline" size="large" style="color:black"></ion-icon>
                     <div class="text-result">
                       Você tem direito a um apoio de até
                     </div>
@@ -51,7 +51,7 @@
 
                 <div v-if="!mostrarResultado && mostrarMensagem" class="ion-padding">
                   <div class="ion-text-center">
-                    <ion-icon name="close-circle-outline" size="large"></ion-icon>
+                    <ion-icon name="close-circle-outline" size="large" style="color:black"></ion-icon>
                     <div class="text-result">{{ mensagem }}</div>
                   </div>
                 </div>
