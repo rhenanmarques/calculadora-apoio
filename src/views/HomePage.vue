@@ -2,56 +2,58 @@
   <ion-page>
     <ion-header>
       <ion-toolbar color="light">
-        <ion-title>Calculadora de Apoio + Habitação</ion-title>
+        <ion-title>Calculadora Apoio + Habitação</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-grid>
-        <ion-row class="banner" style="background-color: aqua;">
+        <ion-row class="banner">
           <ion-col size="12" size-sm="2"></ion-col>
 
           <ion-col>
             <ion-row>
-              <ion-col style="background-color: rgba(255, 255, 255, 0.57); margin-top: 10px;">
-                Utilize nossa calculadora para descobrir se tem direito ao apoio +habitação, e o valor que pode receber:
+              <ion-col style="background-color: rgba(255, 255, 255, 0.57);">
+                <div class="ion-padding-top" style="line-height: 1.5; padding-left: 16px; padding-right: 16px;">
+                  Utilize nossa calculadora para descobrir se tem direito ao apoio +habitação, e o valor que pode receber:
+                </div>
               </ion-col>
             </ion-row>
 
             <ion-row>
-              <ion-col style="background-color: rgba(255, 255, 255, 0.57);">
+              <ion-col class="ion-padding" style="background-color: rgba(255, 255, 255, 0.57);">
 
                 <form @submit.prevent="handleSubmit">
                   <ion-input type="number" v-model="rendimento" label="Rendimento Médio Mensal (€)"
-                    label-placement="floating" fill="solid" placeholder="1200.00" required></ion-input>
+                    label-placement="floating" fill="solid" placeholder="Informe o valor do rendimento mensal" required @input="resetMostrarResultado"
+                    :class="{ 'ion-invalid': rendimentoError }"></ion-input>
                   <div v-if="rendimentoError" class="error-message">{{ messageError }}</div>
 
                   <br>
                   <ion-input type="number" v-model="renda" label="Valor da Renda Mensal (€)" label-placement="floating"
-                    fill="solid" placeholder="350.00" required></ion-input>
+                    fill="solid" placeholder="Informe o valor da renda mensal" required @input="resetMostrarResultado" :class="{ 'ion-invalid': rendaError }"></ion-input>
                   <div v-if="rendaError" class="error-message">Campo obrigatório</div>
 
                   <br>
-                  <ion-button type="submit" expand="block" class="full" style="width: 80%; margin: auto;">Calcular Apoio</ion-button>
+                  <ion-button type="submit" expand="block" class="full">Calcular
+                    Apoio</ion-button>
                 </form>
 
-                <div style="width: 80%; margin: auto;">
-                  <ion-card v-if="mostrarResultado" class="ion-text-center" color="success">
-                    <ion-card-header style="display: flex; align-items: center;">
-                      <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
-                      <ion-card-subtitle>Você tem direito um apoio de até (€)</ion-card-subtitle>
-                      <ion-card-title>{{ valorApoio }}</ion-card-title>
-                    </ion-card-header>
-                  </ion-card>
+                <div v-if="mostrarResultado" class="ion-padding">
+                  <div class="ion-text-center">
+                    <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
+                    <div class="text-result">
+                      Você tem direito a um apoio de até
+                    </div>
+                    <div class="value">{{ valorApoio }}</div>
+                  </div>
                 </div>
 
-                <div style="width: 80%; margin: auto;">
-                  <ion-card v-if="!mostrarResultado && mostrarMensagem" class="ion-text-center" color="danger">
-                    <ion-card-header style="display: flex; align-items: center;">
-                      <ion-icon name="close-circle-outline" size="large"></ion-icon>
-                      <p>{{ mensagem }}</p>
-                    </ion-card-header>
-                  </ion-card>
+                <div v-if="!mostrarResultado && mostrarMensagem" class="ion-padding">
+                  <div class="ion-text-center">
+                    <ion-icon name="close-circle-outline" size="large"></ion-icon>
+                    <div class="text-result">{{ mensagem }}</div>
+                  </div>
                 </div>
               </ion-col>
             </ion-row>
@@ -73,12 +75,14 @@
                   </ion-label>
                 </ion-item>
                 <div class="ion-padding note" slot="content">
+
                   Este serviço não possui nenhuma conexão com o governo de Portugal. O nosso site não é
                   responsável pela interposição, acompanhamento, processamento ou pagamento de qualquer benefício
                   relacionado ao apoio habitacional. Todas as informações fornecidas são apenas para fins informativos
                   e educacionais. É importante ressaltar que cada indivíduo é responsável por seguir os procedimentos
                   oficiais estabelecidos pelo governo de Portugal para a obtenção de benefícios. Não nos
                   responsabilizamos por quaisquer problemas, perdas ou danos decorrentes do uso deste serviço.
+
                 </div>
               </ion-accordion>
             </ion-accordion-group>
@@ -89,11 +93,11 @@
         <!-- info -->
 
         <ion-row>
-          <ion-col size="12" size-sm="2"></ion-col>
+          <ion-col size="12" size-sm="2" class="ion-text-center" style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
           <ion-col>
             <ion-row>
-              <ion-item class="ion-margin">
-                <div>
+              <ion-item class="ion-margin" lines="none">
+                <div class="guidelines">
                   <h3>O que é o Programa + Habitação?</h3>
                   Mais Habitação é o programa do Governo que responde à crise na habitação. Nesta página, explicam-se as
                   medidas através das quais se pretende aumentar o número de imóveis no mercado, travar o aumento das
@@ -104,8 +108,8 @@
             </ion-row>
 
             <ion-row>
-              <ion-item class="ion-margin">
-                <div>
+              <ion-item class="ion-margin" lines="none">
+                <div class="guidelines">
                   <h3>Quem pode beneficiar deste apoio?</h3>
                   São elegíveis os agregados com taxas de esforço superiores a 35%, até ao limite máximo do sexto escalão
                   de IRS (38.632€ de rendimento coletável anual), com contratos de arrendamento ou subarrendamento para
@@ -116,50 +120,21 @@
             </ion-row>
 
           </ion-col>
-          <ion-col size="12" size-sm="2"></ion-col>
+          <ion-col size="12" size-sm="2" class="ion-text-center" style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
+
         </ion-row>
 
-        <!-- <ion-row>
-          <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
-          <ion-col size-md="8">
-            <ion-item class="ion-margin">
-              <div>
-                <h3>O que é o Programa + Habitação?</h3>
-                Mais Habitação é o programa do Governo que responde à crise na habitação. Nesta página, explicam-se as
-                medidas através das quais se pretende aumentar o número de imóveis no mercado, travar o aumento das rendas
-                e proteger as famílias. Para que haja mais construção, mais casas e, sobretudo, mais justiça.
-              </div>
-            </ion-item>
-          </ion-col>
-          <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
-        </ion-row>
-
+        <!-- duvidas -->
         <ion-row>
           <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
-          <ion-col size-md="8">
-            <ion-item class="ion-margin">
-              <div>
-                <h3>Quem pode beneficiar deste apoio?</h3>
-                São elegíveis os agregados com taxas de esforço superiores a 35%, até ao limite máximo do sexto escalão
-                de IRS (38.632€ de rendimento coletável anual), com contratos de arrendamento ou subarrendamento para
-                habitação permanente, celebrados até 15.03.2023, devidamente registados na Autoridade Tributária e
-                Aduaneira.
-              </div>
-            </ion-item>
-          </ion-col>
-          <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
-        </ion-row> -->
-
-        <ion-row>
-          <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
-          <ion-col size-md="8">
+          <ion-col size-md="8" class="ion-padding">
             <h4> Dúvidas?</h4>
 
             <ion-list>
-              <ion-item>
+              <ion-item lines="none">
                 <a href="https://maishabitacao.gov.pt/" target="blank">Mais Habitação</a>
               </ion-item>
-              <ion-item>
+              <ion-item lines="none">
                 <a href="https://www.portugal.gov.pt/pt/gc23/comunicacao/noticia?i=governo-aprova-pacote-mais-habitacao"
                   target="blank">Apoio a Renda </a>
               </ion-item>
@@ -169,18 +144,16 @@
         </ion-row>
       </ion-grid>
 
-
-
-      <ion-footer>
-        <ion-toolbar color="light" class="ion-text-center">
-          <ion-title>Contato</ion-title>
+      <ion-footer class="ion-margin-top">
+        <ion-toolbar color="light" class="ion-text-center ion-padding">
+          <div>Contato</div>
           <ion-label style="font-size: 10pt;">
             Para dúvidas ou sugestões, envie um email para: <a
               href="mailto:contato@seudominio.com">contato@seudominio.com</a>
           </ion-label>
         </ion-toolbar>
 
-        <ion-toolbar color="light" class="ion-text-center">
+        <ion-toolbar color="medium" class="ion-text-center">
           <ion-label style="font-size: 10pt;">
             Todos os direitos reservados. &copy; BlueCondition 2023
           </ion-label>
@@ -243,7 +216,7 @@ export default defineComponent({
     return {
       rendimento: undefined as number | undefined,
       renda: undefined as number | undefined,
-      valorApoio: undefined as number | undefined,
+      valorApoio: undefined as number | string | undefined,
       mensagem: '',
       mostrarResultado: false,
       mostrarMensagem: false,
@@ -305,12 +278,19 @@ export default defineComponent({
           else {
             this.valorApoio = this.renda - taxaEsforco;
             this.valorApoio = Math.min(this.valorApoio, valorMaximoApoio);
+            this.valorApoio = this.valorApoio.toLocaleString('pt', { style: 'currency', currency: 'EUR' });
             this.mostrarResultado = true;
             this.mostrarMensagem = false;
           }
         }
       }
     },
+
+    resetMostrarResultado() {
+      this.mostrarResultado = false;
+      this.mostrarMensagem = false;
+    },
+
   },
 });
 </script>
@@ -323,7 +303,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .banner {
@@ -346,13 +326,18 @@ form {
   padding-top: 5px;
 }
 
-.ion-invalid {
+ion-input.ion-invalid {
   --border-color: red;
+  color:red;
 }
 
 .note {
   font-size: 10pt;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.guidelines {
   line-height: 1.5;
 }
 
@@ -363,37 +348,16 @@ form {
   height: 100%;
 }
 
-.circle {
-  width: 200px;
-  height: 200px;
-  border: solid 1px green;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .circle i {
-  color: white;
-  font-size: 60px;
-  margin-bottom: 20px;
-} */
-
-.text {
+.text-result {
   text-align: center;
-}
-
-.text p {
-  margin: 0;
-  font-size: 16px;
-  color: green;
+  color: black;
+  font-size: large;
 }
 
 .value {
   margin-top: 10px;
   font-size: 25px;
   font-weight: bold;
-  color: green;
+  color: black;
 }
 </style>
