@@ -164,14 +164,14 @@
 
         <ion-toolbar color="medium" class="ion-text-center">
             <ion-row>
-                <ion-col size="6">
+                <ion-col size="12" size-sm="6">
                     <div class="contact">
                         Dúvidas ou sugestões, envie um email para: <a
                             href="mailto:contato@seudominio.com">contato@seudominio.com</a>
                     </div>
                 </ion-col>
-                <ion-col size="6">
-                    <ion-label style="font-size: 10pt;">
+                <ion-col size="12" size-sm="6">
+                    <ion-label class="contact">
                         Todos os direitos reservados. &copy; BlueCondition 2023
                     </ion-label>
                 </ion-col>
@@ -398,8 +398,4 @@ ion-input.ion-invalid {
     font-size: 10pt;
 }
 
-ul li {
-    color: white;
-    text-decoration: none;
-}
 </style>
