@@ -1,11 +1,6 @@
 <template>
   <ion-page>
-    <!-- <ion-header>
-      <ion-toolbar color="light">
-        <ion-title>Calculadora Apoio + Habitação</ion-title>
-      </ion-toolbar>
-    </ion-header> -->
-    <Navbar />
+    <Navbar context-name="Calculadora Benefício Renda" />
 
     <ion-content>
       <ion-grid>
@@ -16,7 +11,7 @@
             <ion-row>
               <ion-col style="background-color: rgba(255, 255, 255, 0.57);">
                 <div class="ion-padding-top" style="line-height: 1.5; padding-left: 16px; padding-right: 16px;">
-                  Utilize nossa calculadora para descobrir se tem direito ao apoio +habitação, e o valor que pode receber:
+                  Utilize nossa calculadora para descobrir se tem direito e o valor que pode receber do apoio + habitação para pagamento de rendas, :
                 </div>
               </ion-col>
             </ion-row>
@@ -96,7 +91,9 @@
 
         <ion-row>
           <ion-col size="12" size-sm="2" class="ion-text-center"
-            style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
+            style="display: flex; align-items: center; justify-content: center;">
+            <!-- Publicidade -->
+          </ion-col>
           <ion-col>
             <ion-row>
               <ion-item class="ion-margin" lines="none">
@@ -124,7 +121,9 @@
 
           </ion-col>
           <ion-col size="12" size-sm="2" class="ion-text-center"
-            style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
+            style="display: flex; align-items: center; justify-content: center;">
+            <!-- Publicidade -->
+          </ion-col>
 
         </ion-row>
 
@@ -148,38 +147,6 @@
         </ion-row>
       </ion-grid>
       <MyFooter />
-
-      <!-- <ion-footer class="ion-margin-top">
-        <ion-toolbar color="light" class="ion-text-center ">
-            <ul class="horizontal-list">
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                    <router-link to="/privacidade">Privacidade</router-link>
-                </li>
-                <li>
-                    <router-link to="/termos-e-condicoes">Termos e Condições</router-link>
-                </li>
-            </ul>
-        </ion-toolbar>
-
-        <ion-toolbar color="medium" class="ion-text-center">
-            <ion-row>
-                <ion-col size="12" size-sm="6">
-                    <div class="contact">
-                        Dúvidas ou sugestões, envie um email para: <a
-                            href="mailto:contato@seudominio.com">contato@seudominio.com</a>
-                    </div>
-                </ion-col>
-                <ion-col size="12" size-sm="6">
-                    <ion-label class="contact">
-                        Todos os direitos reservados. &copy; BlueCondition 2023
-                    </ion-label>
-                </ion-col>
-            </ion-row>
-        </ion-toolbar>
-    </ion-footer> -->
     </ion-content>
 
   </ion-page>
@@ -380,25 +347,6 @@ ion-input.ion-invalid {
   font-weight: bold;
   color: black;
   
-}
-
-.horizontal-list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    /* Remove os pontos de listagem padrão do ul */
-    padding: 0;
-    /* Remove o preenchimento padrão do ul */
-}
-
-.horizontal-list li {
-    margin: 0 10px;
-    text-decoration: none;
-    /* Adiciona um espaço entre os elementos da lista */
-}
-
-.contact {
-    font-size: 10pt;
 }
 
 </style>
