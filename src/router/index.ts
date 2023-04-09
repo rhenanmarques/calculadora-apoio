@@ -9,6 +9,19 @@ const routes: Array<RouteRecordRaw> = [
     name:'Calculadora',
     component: HomePage
   },
+  {
+    path: '/privacidade',
+    name: 'Política Privacidade',
+    component: () => import('@/views/PoliticaPrivacidade.vue'),
+  },
+
+  {
+    path: '/termos-e-condicoes',
+    name: 'Termos Condicões',
+    component: () => import('@/views/TermosUso.vue'),
+  },
+  
+  
   // {
   //   path: '/home',
   //   name: 'Home',

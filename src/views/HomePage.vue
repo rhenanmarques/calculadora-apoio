@@ -1,10 +1,10 @@
 <template>
   <ion-page>
-    <ion-header>
+    <!-- <ion-header>
       <ion-toolbar color="light">
         <ion-title>Calculadora Apoio + Habitação</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header> -->
 
     <ion-content>
       <ion-grid>
@@ -25,13 +25,14 @@
 
                 <form @submit.prevent="handleSubmit">
                   <ion-input type="number" v-model="rendimento" label="Rendimento Médio Mensal (€)"
-                    label-placement="floating" fill="solid" placeholder="Informe o valor do rendimento mensal" required @input="resetMostrarResultado"
-                    :class="{ 'ion-invalid': rendimentoError }"></ion-input>
+                    label-placement="floating" fill="solid" placeholder="Informe o valor do rendimento mensal" required
+                    @input="resetMostrarResultado" :class="{ 'ion-invalid': rendimentoError }"></ion-input>
                   <div v-if="rendimentoError" class="error-message">{{ messageError }}</div>
 
                   <br>
                   <ion-input type="number" v-model="renda" label="Valor da Renda Mensal (€)" label-placement="floating"
-                    fill="solid" placeholder="Informe o valor da renda mensal" required @input="resetMostrarResultado" :class="{ 'ion-invalid': rendaError }"></ion-input>
+                    fill="solid" placeholder="Informe o valor da renda mensal" required @input="resetMostrarResultado"
+                    :class="{ 'ion-invalid': rendaError }"></ion-input>
                   <div v-if="rendaError" class="error-message">Campo obrigatório</div>
 
                   <br>
@@ -93,7 +94,8 @@
         <!-- info -->
 
         <ion-row>
-          <ion-col size="12" size-sm="2" class="ion-text-center" style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
+          <ion-col size="12" size-sm="2" class="ion-text-center"
+            style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
           <ion-col>
             <ion-row>
               <ion-item class="ion-margin" lines="none">
@@ -120,7 +122,8 @@
             </ion-row>
 
           </ion-col>
-          <ion-col size="12" size-sm="2" class="ion-text-center" style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
+          <ion-col size="12" size-sm="2" class="ion-text-center"
+            style="display: flex; align-items: center; justify-content: center;">Publicidade</ion-col>
 
         </ion-row>
 
@@ -144,13 +147,30 @@
         </ion-row>
       </ion-grid>
 
-      <ion-footer class="ion-margin-top">
+      <!-- <ion-footer class="ion-margin-top">
         <ion-toolbar color="light" class="ion-text-center ion-padding">
-          <div>Contato</div>
-          <ion-label style="font-size: 10pt;">
-            Para dúvidas ou sugestões, envie um email para: <a
-              href="mailto:contato@seudominio.com">contato@seudominio.com</a>
-          </ion-label>
+          <ion-row>
+            <ion-col size="6">
+              <div>Contato</div>
+              <ion-label style="font-size: 10pt;">
+                Para dúvidas ou sugestões, envie um email para: <a
+                  href="mailto:contato@seudominio.com">contato@seudominio.com</a>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ul>
+                <li>
+                  <router-link to="/privacidade">Privacidade</router-link>
+                </li>
+                <li>
+                  <router-link to="/termos-e-condicoes">Termos e Condições</router-link>
+                </li>
+              </ul>
+            </ion-col>
+          </ion-row>
+
+
+
         </ion-toolbar>
 
         <ion-toolbar color="medium" class="ion-text-center">
@@ -158,7 +178,7 @@
             Todos os direitos reservados. &copy; BlueCondition 2023
           </ion-label>
         </ion-toolbar>
-      </ion-footer>
+      </ion-footer> -->
 
 
     </ion-content>
@@ -328,7 +348,7 @@ form {
 
 ion-input.ion-invalid {
   --border-color: red;
-  color:red;
+  color: red;
 }
 
 .note {
@@ -359,5 +379,4 @@ ion-input.ion-invalid {
   font-size: 25px;
   font-weight: bold;
   color: black;
-}
-</style>
+}</style>
