@@ -1,29 +1,30 @@
 <template>
     <ion-page>
-        <ion-header>
+        <Navbar contextName="Privacidade"/>
+        <!-- <ion-header>
             <ion-toolbar>
                 <ion-title>Política Privacidade</ion-title>
             </ion-toolbar>
-        </ion-header>
+        </ion-header> -->
         <ion-content>
             <ion-grid>
                 <ion-row>
                     <ion-col class="ion-margin">
-                        <h2><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2>
-                        <p><span style="color: rgb(68, 68, 68);">A sua privacidade é importante para nós. É política do
+                        <h2><span >Política Privacidade</span></h2>
+                        <p><span >A sua privacidade é importante para nós. É política do
                                 Apoio
                                 Habitação
                                 respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no
                                 site <a href="https://www.apoiohabitacao.pt">Apoio Habitação</a>, e outros sites que
                                 possuímos e
                                 operamos.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">Solicitamos informações pessoais apenas quando realmente
+                        <p><span >Solicitamos informações pessoais apenas quando realmente
                                 precisamos
                                 delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu
                                 conhecimento
                                 e
                                 consentimento. Também informamos por que estamos coletando e como será usado.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">Apenas retemos as informações coletadas pelo tempo
+                        <p><span >Apenas retemos as informações coletadas pelo tempo
                                 necessário
                                 para
                                 fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios
@@ -32,10 +33,10 @@
                                 modificação
                                 não
                                 autorizados.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">Não compartilhamos informações de identificação pessoal
+                        <p><span >Não compartilhamos informações de identificação pessoal
                                 publicamente ou
                                 com terceiros, exceto quando exigido por lei.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">O nosso site pode ter links para sites externos que não são
+                        <p><span >O nosso site pode ter links para sites externos que não são
                                 operados
                                 por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e
                                 não
@@ -43,21 +44,21 @@
                                 aceitar responsabilidade por suas respectivas&nbsp;</span><a
                                 href="https://politicaprivacidade.com/" rel="noopener noreferrer" target="_blank"
                                 style="background-color: transparent; color: rgb(68, 68, 68);">políticas de
-                                privacidade</a><span style="color: rgb(68, 68, 68);">.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">Você é livre para recusar a nossa solicitação de
+                                privacidade</a><span >.</span></p>
+                        <p><span >Você é livre para recusar a nossa solicitação de
                                 informações
                                 pessoais,
                                 entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">O uso continuado de nosso site será considerado como
+                        <p><span >O uso continuado de nosso site será considerado como
                                 aceitação
                                 de
                                 nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida
                                 sobre como
                                 lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">
+                        <p><span >
                                 <ul>
                                     <li>
-                                        <span style="color: rgb(68, 68, 68);">O serviço Google AdSense que usamos para
+                                        <span >O serviço Google AdSense que usamos para
                                             veicular
                                             publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em
                                             toda
@@ -65,12 +66,12 @@
                                             limitar o número de vezes que um determinado anúncio é exibido para você.</span>
                                     </li>
                                     <li>
-                                        <span style="color: rgb(68, 68, 68);">Para mais informações sobre o Google AdSense,
+                                        <span >Para mais informações sobre o Google AdSense,
                                             consulte as
                                             FAQs oficiais sobre privacidade do Google AdSense.</span>
                                     </li>
                                     <li>
-                                        <span style="color: rgb(68, 68, 68);">Utilizamos anúncios para compensar os custos
+                                        <span >Utilizamos anúncios para compensar os custos
                                             de
                                             funcionamento deste site e fornecer financiamento para futuros desenvolvimentos.
                                             Os
@@ -84,7 +85,7 @@
                                             interesse.</span>
                                     </li>
                                     <li>
-                                        <span style="color: rgb(68, 68, 68);">Vários parceiros anunciam em nosso nome e os
+                                        <span >Vários parceiros anunciam em nosso nome e os
                                             cookies de
                                             rastreamento de afiliados simplesmente nos permitem ver se nossos clientes
                                             acessaram
@@ -101,10 +102,10 @@
                                 <p><br></p>
                             </span></p>
                         <h3>
-                            <span style="color: rgb(68, 68, 68);">Compromisso do Usuário</span>
+                            <span >Compromisso do Usuário</span>
                         </h3>
                         <p>
-                            <span style="color: rgb(68, 68, 68);">O usuário se compromete a fazer uso adequado dos conteúdos
+                            <span >O usuário se compromete a fazer uso adequado dos conteúdos
                                 e
                                 da
                                 informação que o Apoio Habitação oferece no site e com caráter enunciativo, mas não
@@ -113,20 +114,20 @@
                         </p>
                         <ul>
                             <li>
-                                <span style="color: rgb(68, 68, 68);">A) Não se envolver em atividades que sejam ilegais ou
+                                <span >A) Não se envolver em atividades que sejam ilegais ou
                                     contrárias à
                                     boa fé a à ordem pública;</span>
                             </li>
                             <li>
-                                <span style="color: rgb(68, 68, 68);">B) Não difundir propaganda ou conteúdo de natureza
+                                <span >B) Não difundir propaganda ou conteúdo de natureza
                                     racista,
-                                    xenofóbica, </span><span style="color: rgb(68, 68, 68);"> ou azar, qualquer tipo de
+                                    xenofóbica, </span><span > ou azar, qualquer tipo de
                                     pornografia
                                     ilegal, de apologia ao terrorismo ou contra os direitos humanos;
                                 </span>
                             </li>
                             <li>
-                                <span style="color: rgb(68, 68, 68);">C) Não causar danos aos sistemas físicos (hardwares) e
+                                <span >C) Não causar danos aos sistemas físicos (hardwares) e
                                     lógicos
                                     (softwares) do Apoio Habitação, de seus fornecedores ou terceiros, para introduzir ou
                                     disseminar
@@ -138,29 +139,30 @@
                             </li>
                         </ul>
                         <h3>
-                            <span style="color: rgb(68, 68, 68);">Mais informações</span>
+                            <span >Mais informações</span>
                         </h3>
-                        <p><span style="color: rgb(68, 68, 68);">Esperemos que esteja esclarecido e, como mencionado
+                        <p><span >Esperemos que esteja esclarecido e, como mencionado
                                 anteriormente, se
                                 houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os
                                 cookies
                                 ativados, caso interaja com um dos recursos que você usa em nosso site.</span></p>
-                        <p><span style="color: rgb(68, 68, 68);">Esta política é efetiva a partir de&nbsp;9 April 2023
+                        <p><span >Esta política é efetiva a partir de&nbsp;9 April 2023
                                 15:00</span></p>
                         <br>
                         <br>
                     </ion-col>
                 </ion-row>
             </ion-grid>
+            <MyFooter />
 
-            <ion-footer class="ion-margin-top">
+            <!-- <ion-footer class="ion-margin-top">
                 <ion-toolbar color="light" class="ion-text-center ">
                     <ul class="horizontal-list">
                         <li>
-                            <RouterLink to="/">Home</RouterLink>
+                            <a href="/">Home</a>
                         </li>
                         <li>
-                            <router-link to="/privacidade">Privacidade</router-link>
+                            <a href="/privacidade">Privacidade</a>
                         </li>
                         <li>
                             <router-link to="/termos-e-condicoes">Termos e Condições</router-link>
@@ -183,28 +185,27 @@
                         </ion-col>
                     </ion-row>
                 </ion-toolbar>
-            </ion-footer>
+            </ion-footer> -->
 
         </ion-content>
     </ion-page>
 </template>
   
 <script lang="ts">
-import {
-    IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCol, IonRow, IonIcon
-} from '@ionic/vue';
-
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCol, IonRow } from '@ionic/vue';
+import Navbar from "../components/NavBar.vue";
+import MyFooter from "../components/MyFooter.vue";
 import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
     name: 'Privacidade',
-    components: {},
+    components: {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCol, IonRow, Navbar, MyFooter},
     data() {
         return {};
     },
     methods: {},
     created() { },
-};
+});
 </script>
 
 <style>
@@ -225,6 +226,14 @@ export default {
 
 .contact {
     font-size: 10pt;
+}
+
+h2 {
+    color: rgb(68, 68, 68);
+}
+
+p {
+    line-height: 1.5;
 }
 </style>
   

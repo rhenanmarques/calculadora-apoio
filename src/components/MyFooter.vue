@@ -2,39 +2,32 @@
     <ion-footer class="ion-margin-top">
         <ion-toolbar color="light" class="ion-text-center ">
 
-
             <ul class="horizontal-list">
                 <li>
-                    <RouterLink to="/">Home</RouterLink>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <router-link to="/privacidade">Privacidade</router-link>
+                    <a href="/privacidade">Privacidade</a>
                 </li>
                 <li>
-                    <router-link to="/termos-e-condicoes">Termos e Condições</router-link>
+                    <a href="/termos-e-condicoes">Termos e Condições</a>
                 </li>
             </ul>
-
-
-
-
-
         </ion-toolbar>
 
         <ion-toolbar color="medium" class="ion-text-center">
             <ion-row>
-                <ion-col size="6">
+                <ion-col size="12" size-sm="6">
                     <div class="contact">
                         Dúvidas ou sugestões, envie um email para: <a
                             href="mailto:contato@seudominio.com">contato@seudominio.com</a>
                     </div>
                 </ion-col>
-                <ion-col size="6">
+                <ion-col size="12" size-sm="6">
                     <ion-label style="font-size: 10pt;">
                         Todos os direitos reservados. &copy; BlueCondition 2023
                     </ion-label>
                 </ion-col>
-
             </ion-row>
 
         </ion-toolbar>
@@ -42,9 +35,14 @@
 </template>
 
 <script lang="ts">
-export default {
-    name: "Footer"
-}
+
+import { IonToolbar, IonLabel, IonCol, IonRow, IonFooter } from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+    name: "MyFooter"
+})
+
 </script>
 
 <style>
@@ -59,16 +57,19 @@ export default {
 
 .horizontal-list li {
     margin: 0 10px;
-    text-decoration: none;
     /* Adiciona um espaço entre os elementos da lista */
+}
+
+.horizontal-list li a {
+    text-decoration: none;
 }
 
 .contact {
     font-size: 10pt;
 }
 
-ul li {
-    color: white;
+.contact a {
     text-decoration: none;
 }
+
 </style>

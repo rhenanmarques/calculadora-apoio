@@ -1,10 +1,11 @@
 <template>
   <ion-page>
-    <ion-header>
+    <!-- <ion-header>
       <ion-toolbar color="light">
         <ion-title>Calculadora Apoio + Habitação</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header> -->
+    <Navbar />
 
     <ion-content>
       <ion-grid>
@@ -146,12 +147,13 @@
           <ion-col size="10" size-md="2" ion-hide-md-down></ion-col>
         </ion-row>
       </ion-grid>
+      <MyFooter />
 
-      <ion-footer class="ion-margin-top">
+      <!-- <ion-footer class="ion-margin-top">
         <ion-toolbar color="light" class="ion-text-center ">
             <ul class="horizontal-list">
                 <li>
-                    <RouterLink to="/">Home</RouterLink>
+                  <a href="/">Home</a>
                 </li>
                 <li>
                     <router-link to="/privacidade">Privacidade</router-link>
@@ -177,7 +179,7 @@
                 </ion-col>
             </ion-row>
         </ion-toolbar>
-    </ion-footer>
+    </ion-footer> -->
     </ion-content>
 
   </ion-page>
@@ -186,12 +188,11 @@
 
 
 <script lang="ts">
-import {
-  IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonItem, IonLabel, IonInput, IonFooter, IonList, IonCard, IonAccordion,
-  IonAccordionGroup, IonCol, IonRow, IonIcon
-} from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonItem, IonLabel, IonInput, IonFooter, IonList, IonCard, IonAccordion, IonAccordionGroup, IonCol, IonRow, IonIcon } from '@ionic/vue';
 
 import { addIcons } from 'ionicons';
+import Navbar from "../components/NavBar.vue";
+import MyFooter from "../components/MyFooter.vue";
 import { heart, warningOutline, checkmarkOutline, checkmarkCircleOutline, closeCircleOutline, closeOutline } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
@@ -215,8 +216,11 @@ export default defineComponent({
     IonCol,
     IonRow,
     IonIcon,
+    Navbar,
+    MyFooter,
 
   },
+  
   created() {
     addIcons({
       heart: heart,
@@ -225,10 +229,9 @@ export default defineComponent({
       'close-circle-outline': closeCircleOutline,
       'checkmark-outline': checkmarkOutline,
       'close-outline': closeOutline,
-
     });
-
   },
+
   data() {
     return {
       rendimento: undefined as number | undefined,
