@@ -12,13 +12,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/privacidade',
     name: 'Política Privacidade',
-    component: () => import('@/views/PoliticaPrivacidade.vue'),
+    component: () => import('../views/PoliticaPrivacidade.vue'),
   },
 
   {
     path: '/termos-e-condicoes',
     name: 'Termos Condicões',
-    component: () => import('@/views/TermosUso.vue'),
+    component: () => import('../views/TermosUso.vue'),
   },
   
   
