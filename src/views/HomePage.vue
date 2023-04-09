@@ -191,7 +191,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonItem, IonLabel, IonInput, IonFooter, IonList, IonCard, IonAccordion, IonAccordionGroup, IonCol, IonRow, IonIcon } from '@ionic/vue';
 
 import { addIcons } from 'ionicons';
-import Navbar from "../components/NavBar.vue";
+import Navbar from "../components/Navbar.vue";
 import MyFooter from "../components/MyFooter.vue";
 import { heart, warningOutline, checkmarkOutline, checkmarkCircleOutline, closeCircleOutline, closeOutline } from 'ionicons/icons';
 import { defineComponent } from 'vue';
@@ -220,7 +220,7 @@ export default defineComponent({
     MyFooter,
 
   },
-  
+
   created() {
     addIcons({
       heart: heart,

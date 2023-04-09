@@ -90,7 +90,7 @@
 <script lang="ts">
 import { IonContent, IonGrid, IonPage, IonCol, IonRow } from '@ionic/vue';
 
-import Navbar from "../components/NavBar.vue";
+import Navbar from "../components/Navbar.vue";
 import MyFooter from "../components/MyFooter.vue";
 import { defineComponent } from 'vue';
 

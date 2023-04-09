@@ -193,7 +193,7 @@
   
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCol, IonRow } from '@ionic/vue';
-import Navbar from "../components/NavBar.vue";
+import Navbar from "../components/Navbar.vue";
 import MyFooter from "../components/MyFooter.vue";
 import { defineComponent } from 'vue';
 
