@@ -4,13 +4,16 @@
 
             <ul class="horizontal-list">
                 <li>
-                    <a href="/">Home</a>
+                    <RouterLink to="/">Home</RouterLink>
+                    <!-- <a href="/">Home</a> -->
                 </li>
                 <li>
-                    <a href="/privacidade">Privacidade</a>
+                    <RouterLink to="/privacidade">Privacidade</RouterLink>
+                    <!-- <a href="/privacidade">Privacidade</a> -->
                 </li>
                 <li>
-                    <a href="/termos-e-condicoes">Termos e Condições</a>
+                    <RouterLink to="/termos-e-condicoes">Termos e Condições</RouterLink>
+                    <!-- <a href="/termos-e-condicoes">Termos e Condições</a> -->
                 </li>
             </ul>
         </ion-toolbar>
