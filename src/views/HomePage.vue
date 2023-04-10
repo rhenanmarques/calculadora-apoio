@@ -12,7 +12,7 @@
               <ion-col style="background-color: rgba(255, 255, 255, 0.57);">
                 <div class="ion-padding-top" style="line-height: 1.5; padding-left: 16px; padding-right: 16px;">
                   Utilize nossa calculadora para descobrir se tem direito e o valor que pode receber do apoio + habitação
-                  para pagamento de rendas, :
+                  para pagamento de rendas:
                 </div>
               </ion-col>
             </ion-row>
